@@ -1,0 +1,66 @@
+{
+  "build": {
+    "appId": "com.quantical_solutions.handtrack",
+    "productName": "handtrack",
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "snap",
+        "rpm"
+      ],
+      "category": "Utility"
+    },
+    "win": {
+      "target": {
+        "target": "nsis",
+        "arch": [
+          "ia32",
+          "x64"
+        ]
+      }
+    },
+    "nsis": {
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true,
+      "oneClick": false
+    }
+  },
+  "name": "Handtrack",
+  "version": "0.0.1",
+  "description": "QS Handtrack Test",
+  "main": "main.js",
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "test": "npm start",
+    "start": "electron .",
+    "dist": "electron-builder --win",
+    "dist:linux": "electron-builder --linux",
+    "dist:mac": "electron-builder --mac",
+    "pack": "electron-builder --dir"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Quantical Solutions R&D",
+    "email": "tech-support@quanticalsolutions.com"
+  },
+  "contributors": [
+    {
+      "name": "Frédéric Geffray",
+      "url": "quanticalsolutions.com",
+      "email": "in-touch-fg@quanticalsolutions.com"
+    }
+  ],
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "electron-builder": "^22.9.1",
+    "electron-packager": "^15.2.0",
+    "electron": "^11.1.1"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1",
+    "handtrackjs": "^0.0.13"
+  }
+}
